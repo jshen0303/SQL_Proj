@@ -1,0 +1,2 @@
+# Project_Lightyear
+I currently own a business dealing with agricultural spare parts and I want to have my own inventory and POS system that works online/offline. Create a DB definition that allows me to track purchases (customer sales history and supplier purchase history), inventory and its location, and the ability to receive quotations from prospective customers that will show recent purchases (bought and sold).
