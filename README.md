@@ -49,12 +49,12 @@ We need an architectural layout of the database with source code, documentation,
 
 ## Deliverables
 
-> Source Code <br />
+Source Code <br />
 > 
->> MySQL file: Project_Lightyear.sql <br />
+> 1. MySQL file: Project_Lightyear.sql <br />
 >
-> ERD Diagram <br />
->> Using DBSchema trial software to generate documentation for Project Lightyear architecture: Project_Lightyear.pdf <br />
->> Architecture: ERD_PL.jpg
+ERD Diagram <br />
+> 1. Using DBSchema trial software to generate documentation for Project Lightyear architecture: Project_Lightyear.pdf <br />
+> 2. Architecture: ERD_PL.jpg
 
 
