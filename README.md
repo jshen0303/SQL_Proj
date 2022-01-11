@@ -55,6 +55,5 @@ Source Code <br />
 >
 ERD Diagram <br />
 > 1. Use DBSchema trial software to generate documentation for Project Lightyear architecture: Project_Lightyear.pdf <br />
-> 2. Architecture: ERD_PL.jpg
 
 
