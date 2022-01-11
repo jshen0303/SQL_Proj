@@ -19,40 +19,40 @@ Must accept quotations from customer and return list of information regarding qu
 
 ## Entities 
 
-Parts
-Supplier
-Buyers 
-Location
-Sales
-User
-Quotation
+> Parts <br />
+Supplier <br />
+Buyers <br />
+Location <br />
+Sales <br />
+User <br />
+Quotation <br />
 
 ## Assumptions
 
-User logs in to make a quotation for parts but does not make purchase(s) through the application.
-Employee files invoices after receiving a quotation.
-Onsite managers have to manually monitor inventory in-flow/out-flow based on their respective locations.
-Inventory warehouse will have adequate storage capacity.
+> User logs in to make a quotation for parts but does not make purchase(s) through the application. <br />
+Employee files invoices after receiving a quotation. <br />
+Onsite managers have to manually monitor inventory in-flow/out-flow based on their respective locations. <br />
+Inventory warehouse will have adequate storage capacity. <br />
 
 ## Architecture 
 
-Tables must be efficient, enforce data integrity, lack redundancy, and be sensible.
-Tables must be normalized to at least 3NF
-Primary key and foreign key constraints and references should be created.
-Seed increment and identity must be planned.
-Smallest data type must be used.
-Data types, naming conventions, and schema design should adhere to best practice.
-Temporal tables for later analysis.
-Data types should be carefully planned.
-Nulls should be carefully planned.
-Schemas should be used to keep tables compartmentalized.
+> Tables must be efficient, enforce data integrity, lack redundancy, and be sensible. <br />
+Tables must be normalized to at least 3NF. <br />
+Primary key and foreign key constraints and references should be created. <br />
+Seed increment and identity must be planned. <br />
+Smallest data type must be used. <br />
+Data types, naming conventions, and schema design should adhere to best practice. <br />
+Temporal tables for later analysis. <br />
+Data types should be carefully planned. <br />
+Nulls should be carefully planned. <br />
+Schemas should be used to keep tables compartmentalized. <br />
 
 ## Deliverables
 
-Source Code
-MySQL file: Project_Lightyear.sql
-ERD Diagram
-Using DBSchema trial software to generate documentation for Project Lightyear architecture: Project_Lightyear.pdf
-Architecture: ERD_PL.jpg
+> Source Code <br />
+>> MySQL file: Project_Lightyear.sql <br />
+> ERD Diagram <br />
+>> Using DBSchema trial software to generate documentation for Project Lightyear architecture: Project_Lightyear.pdf <br />
+>> Architecture: ERD_PL.jpg
 
 
