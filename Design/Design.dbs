@@ -1,1 +1,146 @@
-
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Lightyear" id="Project-524" database="LogicalDesign" >
+	<comment><![CDATA[Inventory management database system for personal project]]></comment>
+	<schema name="Lightyear" >
+		<table name="Buyer" prior="Entity" generator_rows="100" >
+			<column name="buyer_id" type="int" jt="4" mandatory="y" />
+			<column name="buyer_name" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="buyer_email" type="varchar" length="250" jt="12" mandatory="y" />
+			<column name="buyer_phone" type="int" jt="4" mandatory="y" />
+			<column name="quotation_id" type="int" jt="4" mandatory="y" />
+			<index name="Pk_Buyer_buyer_id" unique="PRIMARY_KEY" >
+				<column name="buyer_id" />
+			</index>
+			<fk name="Fk_Buyer_quotationid" to_schema="Lightyear" to_table="Quotation" type="OneToOne" >
+				<fk_column name="quotation_id" pk="quotation_id" />
+			</fk>
+		</table>
+		<table name="Entity" />
+		<table name="Invoice" prior="Entity" >
+			<column name="invoice_id" type="int" jt="4" mandatory="y" />
+			<column name="part_id" type="int" jt="4" mandatory="y" />
+			<column name="quantity" type="int" jt="4" mandatory="y" />
+			<column name="price" type="double" jt="8" mandatory="y" />
+			<column name="date" type="date" jt="91" mandatory="y" />
+			<column name="comment" type="varchar" length="500" jt="12" />
+			<column name="buyer_id" type="int" jt="4" mandatory="y" />
+			<column name="sales_id" type="int" jt="4" />
+			<index name="Pk_Invoice_invoice_id" unique="PRIMARY_KEY" >
+				<column name="invoice_id" />
+			</index>
+			<fk name="Fk_Invoice_partid" to_schema="Lightyear" to_table="Part" type="Identifying" >
+				<fk_column name="part_id" pk="part_id" />
+			</fk>
+			<fk name="Fk_Invoice_buyerid" to_schema="Lightyear" to_table="Buyer" type="Identifying" >
+				<fk_column name="buyer_id" pk="buyer_id" />
+			</fk>
+			<fk name="Fk_Invoice_salesid" to_schema="Lightyear" to_table="Sales" type="OneToOne" >
+				<fk_column name="sales_id" pk="sales_id" />
+			</fk>
+		</table>
+		<table name="Location" prior="Locaiton" >
+			<column name="location_id" type="int" jt="4" mandatory="y" />
+			<column name="location_name" type="varchar" length="250" jt="12" mandatory="y" />
+			<column name="location_address" type="varchar" length="500" jt="12" mandatory="y" />
+			<column name="location_city" type="varchar" length="250" jt="12" mandatory="y" />
+			<column name="location_state" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="location_country" type="char" length="2" jt="1" mandatory="y" />
+			<column name="location_zipcode" type="int" jt="4" mandatory="y" />
+			<index name="Pk_Location_location_id" unique="PRIMARY_KEY" >
+				<column name="location_id" />
+			</index>
+		</table>
+		<table name="Part" prior="Parts" >
+			<column name="part_id" type="varchar" length="50" jt="12" mandatory="y" />
+			<column name="part_name" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="part_brand" type="varchar" length="100" jt="12" />
+			<column name="discontinued" type="boolean" jt="-7" mandatory="y" />
+			<index name="Pk_Parts_part_id" unique="PRIMARY_KEY" >
+				<column name="part_id" />
+			</index>
+		</table>
+		<table name="PartStored" prior="PartsStored" >
+			<column name="location_id" type="int" jt="4" mandatory="y" />
+			<column name="part_id" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="quantity" type="int" jt="4" mandatory="y" />
+			<fk name="Fk_PartsStored_location" to_schema="Lightyear" to_table="Location" type="Identifying" >
+				<fk_column name="location_id" pk="location_id" />
+			</fk>
+			<fk name="Fk_PartsStored_partid" to_schema="Lightyear" to_table="Part" type="Identifying" >
+				<fk_column name="part_id" pk="part_id" />
+			</fk>
+		</table>
+		<table name="PartSupplied" prior="PartsSupplied" >
+			<column name="part_id" type="varchar" length="50" jt="12" mandatory="y" />
+			<column name="supplier_id" type="int" jt="4" mandatory="y" />
+			<column name="quantity" type="int" jt="4" mandatory="y" />
+			<column name="price" type="double" jt="8" mandatory="y" />
+			<column name="purchase_date" type="date" jt="91" mandatory="y" />
+			<fk name="fk_partssupplied_part_id" to_schema="Lightyear" to_table="Part" type="Identifying" >
+				<fk_column name="part_id" pk="part_id" />
+			</fk>
+			<fk name="fk_partssupplied_supplier_id" to_schema="Lightyear" to_table="Supplier" type="Identifying" >
+				<fk_column name="supplier_id" pk="supplier_id" />
+			</fk>
+		</table>
+		<table name="Quotation" prior="Entity" >
+			<column name="quotation_id" type="int" jt="4" mandatory="y" />
+			<column name="part_id" type="int" jt="4" mandatory="y" />
+			<column name="date" type="date" jt="91" mandatory="y" />
+			<column name="quantity" type="int" jt="4" mandatory="y" />
+			<column name="price" type="double" jt="8" mandatory="y" />
+			<column name="comment" type="varchar" length="500" jt="12" mandatory="y" />
+			<index name="Pk_Quotation_quotation_id" unique="PRIMARY_KEY" >
+				<column name="quotation_id" />
+			</index>
+			<fk name="Fk_Quotation_partid" to_schema="Lightyear" to_table="Part" type="Identifying" >
+				<fk_column name="part_id" pk="part_id" />
+			</fk>
+		</table>
+		<table name="Sales" prior="Entity" >
+			<column name="sales_id" type="int" jt="4" mandatory="y" />
+			<column name="sales_date" type="date" jt="91" mandatory="y" />
+			<index name="Pk_Sales_sales_id" unique="PRIMARY_KEY" >
+				<column name="sales_id" />
+			</index>
+		</table>
+		<table name="Supplier" prior="Suppliers" >
+			<column name="supplier_id" type="int" jt="4" mandatory="y" />
+			<column name="supplier_name" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="supplier_email" type="varchar" length="250" jt="12" mandatory="y" />
+			<column name="supplier_phone" type="int" jt="4" mandatory="y" />
+			<index name="Pk_Supplier_supplier_id" unique="PRIMARY_KEY" >
+				<column name="supplier_id" />
+			</index>
+		</table>
+		<table name="employee" prior="Entity" >
+			<column name="employee_id" type="int" jt="4" mandatory="y" />
+			<column name="employee_firstname" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="employee_lastname" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="invoice_id" type="int" jt="4" />
+			<index name="Pk_employee_employee_id" unique="PRIMARY_KEY" >
+				<column name="employee_id" />
+			</index>
+			<fk name="Fk_employee_invoiceid" to_schema="Lightyear" to_table="Invoice" type="OneToOne" >
+				<fk_column name="invoice_id" pk="invoice_id" />
+			</fk>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout-858" show_column_type="y" show_relation="columns" >
+		<comment><![CDATA[Lightyear]]></comment>
+		<entity schema="Lightyear" name="Buyer" color="C1D8EE" x="688" y="608" />
+		<entity schema="Lightyear" name="Invoice" color="C1D8EE" x="1104" y="320" />
+		<entity schema="Lightyear" name="Location" color="C1D8EE" x="1088" y="128" />
+		<entity schema="Lightyear" name="Part" color="C1D8EE" x="416" y="128" />
+		<entity schema="Lightyear" name="PartStored" color="C1D8EE" x="784" y="128" />
+		<entity schema="Lightyear" name="PartSupplied" color="C1D8EE" x="128" y="256" />
+		<entity schema="Lightyear" name="Quotation" color="C1D8EE" x="384" y="384" />
+		<entity schema="Lightyear" name="Sales" color="C1D8EE" x="1152" y="624" />
+		<entity schema="Lightyear" name="Supplier" color="C1D8EE" x="144" y="544" />
+		<entity schema="Lightyear" name="employee" color="C1D8EE" x="640" y="416" />
+		<callout x="48" y="48" pointer="Round" >
+			<comment><![CDATA[Right-click the layout to create entities or shapes, create relations using drag and drop.
+Save the design to file. Use the Convert menu option to convert the model to a physical model.]]></comment>
+		</callout>
+	</layout>
+</project>
