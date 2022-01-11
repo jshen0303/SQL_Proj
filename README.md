@@ -1,4 +1,4 @@
-<p><strong>PROJECT LIGHTYEAR</strong></p>
+## PROJECT LIGHTYEAR
 <p><span style="text-decoration: underline;">Project Background/Description</span></p>
 <p>I currently own a business dealing with agricultural spare parts and I want to have my own inventory management system that works online/offline. Create a DB definition that allows me to track purchases (customer sales history and supplier purchase history), inventory and its location, and the ability to receive quotations from prospective customers that will show recent purchases (bought and sold).</p>
 <p><span style="text-decoration: underline;">Project Scope</span></p>
