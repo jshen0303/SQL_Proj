@@ -51,7 +51,7 @@ Schemas should be used to keep tables compartmentalized. <br />
 
 > Source Code <br />
 >> MySQL file: Project_Lightyear.sql <br />
-> ERD Diagram <br />
+< ERD Diagram <br />
 >> Using DBSchema trial software to generate documentation for Project Lightyear architecture: Project_Lightyear.pdf <br />
 >> Architecture: ERD_PL.jpg
 
