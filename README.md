@@ -10,7 +10,7 @@ We need an architectural layout of the database with source code, documentation,
 
 ## Major Functional Requirements
 
-> Business Requirements
+> Business Requirements /n
 > Must track inventory.
 Must track and sell spare parts by part name and part number.
 Vendors must be tracked and associated with products.
