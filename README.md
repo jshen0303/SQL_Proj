@@ -1,9 +1,9 @@
 ## PROJECT LIGHTYEAR
-<p><span style="text-decoration: underline;">Project Background/Description</span></p>
+# Project Background/Description
 <p>I currently own a business dealing with agricultural spare parts and I want to have my own inventory management system that works online/offline. Create a DB definition that allows me to track purchases (customer sales history and supplier purchase history), inventory and its location, and the ability to receive quotations from prospective customers that will show recent purchases (bought and sold).</p>
-<p><span style="text-decoration: underline;">Project Scope</span></p>
+# Project Scope
 <p>We need an architectural layout of the database with source code, documentation, a diagram, and a plan / writeup for a proof of concept to be used for interview purposes. The code should adhere to best practices and be scalable, the documentation should be informative and consistent while easy to read and navigate for reference, the diagram should be clear and helpful, and the writeup should explain the project in detail.</p>
-<p><span style="text-decoration: underline;">Major Functional Requirements</span></p>
+# Major Functional Requirements
 <ul>
 <li>Business Requirements</li>
 <li>Must track inventory.</li>
@@ -12,7 +12,7 @@
 <li>Must accept large volumes of data and be scalable to local and national web traffic.</li>
 <li>Must accept quotations from customer and return list of information regarding quoted spare parts (history of prices, location of part(s), suppliers/buyers, and dates)</li>
 </ul>
-<p><span style="text-decoration: underline;">Entities&nbsp;</span></p>
+# Entities
 <ul>
 <li>Parts</li>
 <li>Supplier</li>
@@ -22,14 +22,14 @@
 <li>User</li>
 <li>Quotation</li>
 </ul>
-<p><span style="text-decoration: underline;">Assumptions</span></p>
+# Assumptions
 <ul>
 <li>User logs in to make a quotation for parts but does not make purchase(s) through the application.</li>
 <li>Employee files invoices after receiving a quotation.</li>
 <li>Onsite managers have to manually monitor inventory in-flow/out-flow based on their respective locations.</li>
 <li>Inventory warehouse will have adequate storage capacity.</li>
 </ul>
-<p><span style="text-decoration: underline;">Architecture&nbsp;</span></p>
+# Architecture
 <ul>
 <li>Tables must be efficient, enforce data integrity, lack redundancy, and be sensible.</li>
 <li>Tables must be normalized to at least 3NF</li>
@@ -42,7 +42,7 @@
 <li>Nulls should be carefully planned.</li>
 <li>Schemas should be used to keep tables compartmentalized.</li>
 </ul>
-<p><span style="text-decoration: underline;">Deliverables</span></p>
+# Deliverables
 <ul>
 <li><strong>Source Code</strong></li>
 <ul>
